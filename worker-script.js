@@ -3,7 +3,7 @@ addEventListener("fetch", event => {
 })
 
 async function handleRequest(request) {
-  //constants
+  //constants 
   const redirectUrl = "https://developers.cloudflare.com/workers/about/";
   const redirectStatusCode = 302;
 
