@@ -5,3 +5,7 @@ main = "worker-script.js"
 
 # The compatibility date ensures your Worker runs on a specific version of the Workers runtime, preventing breaking changes from affecting your code.
 compatibility_date = "2025-08-24"
+
+[[routes]]
+pattern = "niv-headers-demo.online/*"
+zone_name = "niv-headers-demo.online"
