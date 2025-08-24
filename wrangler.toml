@@ -1,12 +1,7 @@
-# This is the configuration file for your Cloudflare Worker.
+# Cloudflare Worker configuration file for your.
 
-# The name of your Worker. This will be the name of the service on Cloudflare.
-name = "headers-demo-worker"
-
-# The main entry point for your Worker script.
-# This should be the path to your JavaScript file.
+name = "curl-redirect-worker"
 main = "worker-script.js"
 
-# The compatibility date ensures your Worker runs on a specific version
-# of the Workers runtime, preventing breaking changes from affecting your code.
+# The compatibility date ensures your Worker runs on a specific version of the Workers runtime, preventing breaking changes from affecting your code.
 compatibility_date = "2025-08-24"
