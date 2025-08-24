@@ -23,6 +23,17 @@ async function handleRequest(request) {
     return Response.redirect(redirectUrl, redirectStatusCode);
   }
 
-  // If the conditions for redirect are not met, fetch the original request.
-  return fetch(request);
+  // If redirect is not needed (the conditions for redirect are not met), fetch the original request with a **proxy to the tunnel**
+  const url = new URL(request.url);
+  url.hostname = 'tunnel.niv-headers-demo.online';
+  
+  // Create a new request with the modified URL
+  const modifiedRequest = new Request(url.toString(), {
+    method: request.method,
+    headers: request.headers,
+    body: request.body,
+    redirect: request.redirect
+  });
+  
+  return fetch(modifiedRequest);
 }
